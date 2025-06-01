@@ -37,6 +37,7 @@ public:
     {
 
         
-    const int size = 5;
-        return 0;
+    
+    const int size = 3;
+    return 0;
     }
