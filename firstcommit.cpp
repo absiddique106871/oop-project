@@ -25,7 +25,7 @@ public:
         cout << "persons id: " << id << endl;
         cout << "persons Name: " << name << endl;
         rulebroken->showRule();
-        cout << "Fine to Pay: pln"<< rulebroken->getfine() << endl;
+        cout << "Fine to Pay: pln"<< rulebroken->getfine() << endl
     }
 
     ~person() {
