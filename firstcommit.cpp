@@ -2,7 +2,8 @@
 #include <string>
 using namespace std;
 class fine
-{public :
+{
+    public :
 
     virtual void showrule() = 0;
     virtual int getfine() = 0;
@@ -10,16 +11,19 @@ class fine
 };
 
 
-};
+
 class overspeeding : public fine {
 public:
     void showrule() override {
         cout << "Crime= Overspeeding" << endl;
     }
     int getfine() override {
-        return 150;
-    };
-    class signalcross : public fine {
+        return 200;
+    }   
+};
+    
+class signalcross : public fine
+ {
 public:
     void showrule() override {
         cout << "Crime= signal cross" << endl;
@@ -43,25 +47,26 @@ class person
 private:
     int id;
     string name;
-    trafficrule* rulebroken;
+    fine*rulebroken;
 public:
-    person(int i, string n, trafficrule* rule) : id(i), name(n), rulebroken(rule) {}
+    person(int i, string n, fine    * rule) : id(i), name(n), rulebroken(rule) {}
 
     int getid() {
         return id;
     }
 
-    void showFine() {
+    void showfine() {
         cout << "--------------------------" << endl;
         cout << "persons id: " << id << endl;
         cout << "persons Name: " << name << endl;
-        rulebroken->showRule();
-        cout << "Fine to Pay: pln"<< rulebroken->getfine() << endl
-    }
+        rulebroken->showrule();
+        cout << "Fine to Pay: $"<< rulebroken->getfine() << endl;
+    };
 
     ~person() {
         delete rulebroken;
     }
-}
+};
+
 
    
