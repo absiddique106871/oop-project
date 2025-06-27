@@ -63,6 +63,9 @@ public:
         rulebroken->showrule();
         cout << "Fine to Pay: $"<< rulebroken->getfine() << endl;
     };
+     void payFine() {
+        finePaid = true;
+        cout << "Status: fine paid successfully" << endl;
 
     ~person() {
         delete rulebroken;
