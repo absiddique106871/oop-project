@@ -50,7 +50,7 @@ private:
     fine*rulebroken;
     bool finePaid;
 public:
-    person(int i, string n, fine    * rule) : id(i), name(n), rulebroken(rule),finePaid(false) {}
+    person(int i, string n, fine    * rule,bool student = false) : id(i), name(n), rulebroken(rule),finePaid(false), isStudent(student) {}
 
     int getid() {
         return id;
