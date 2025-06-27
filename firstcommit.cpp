@@ -61,7 +61,7 @@ public:
         cout << "persons id: " << id << endl;
         cout << "persons Name: " << name << endl;
         rulebroken->showrule();
-        cout << "fine to Pay: $"<< rulebroken->getfine() << endl;
+        
         if (finePaid) {
             cout << "fine to Pay: $0 (Paid)" << endl;
         } else {
@@ -71,11 +71,28 @@ public:
      void payFine() {
         finePaid = true;
         cout << "Status: fine paid successfully" << endl;
+     }
 
     ~person() {
         delete rulebroken;
     }
 };
+    int main() {
+    person p1(101, "Abu", new overspeeding());
+    person p2(102, "Siddique", new signalcross());
+
+   
+    p1.showfine();
+    p2.showfine();
+
+  
+    cout << "\nAbu is paying the fine...\n";
+    
+    p1.payFine();
+    p1.showfine();
+
+    return 0;
+}
 
 
    
