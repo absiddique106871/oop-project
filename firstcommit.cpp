@@ -61,7 +61,12 @@ public:
         cout << "persons id: " << id << endl;
         cout << "persons Name: " << name << endl;
         rulebroken->showrule();
-        cout << "Fine to Pay: $"<< rulebroken->getfine() << endl;
+        cout << "fine to Pay: $"<< rulebroken->getfine() << endl;
+        if (finePaid) {
+            cout << "fine to Pay: $0 (Paid)" << endl;
+        } else {
+            cout << "fine to Pay: $" << rulebroken->getfine() << " (Unpaid)" << endl;
+        }
     };
      void payFine() {
         finePaid = true;
