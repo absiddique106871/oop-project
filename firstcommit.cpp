@@ -62,10 +62,15 @@ public:
         cout << "persons Name: " << name << endl;
         rulebroken->showrule();
         
-        if (finePaid) {
+        int baseFine = rulebroken->getfine();
+        int discountedfine = isStudent ? baseFine / 2 : baseFine;
+       if (finePaid) {
             cout << "fine to Pay: $0 (Paid)" << endl;
         } else {
-            cout << "fine to Pay: $" << rulebroken->getfine() << " (Unpaid)" << endl;
+            if (isStudent) {
+                cout << "Student discount applied: 50%" << endl;
+            }
+            cout << "fine to Pay: $" << discountedfine << " (Unpaid)" << endl;
         }
     };
      void payFine() {
